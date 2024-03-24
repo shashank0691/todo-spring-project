@@ -2,9 +2,16 @@ package com.example.todospringproject;
 
 public class ToDo{
 	private int id;
+	private boolean completed;
 	private String title;
-	private String body;
 	private int userId;
+
+	public ToDo(int id, boolean completed, String title, int userId) {
+		this.id = id;
+		this.completed = completed;
+		this.title = title;
+		this.userId = userId;
+	}
 
 	public void setId(int id){
 		this.id = id;
@@ -12,6 +19,14 @@ public class ToDo{
 
 	public int getId(){
 		return id;
+	}
+
+	public void setCompleted(boolean completed){
+		this.completed = completed;
+	}
+
+	public boolean isCompleted(){
+		return completed;
 	}
 
 	public void setTitle(String title){
@@ -22,19 +37,22 @@ public class ToDo{
 		return title;
 	}
 
-	public void setBody(String body){
-		this.body = body;
-	}
-
-	public String getBody(){
-		return body;
-	}
-
 	public void setUserId(int userId){
 		this.userId = userId;
 	}
 
 	public int getUserId(){
 		return userId;
+	}
+
+	@Override
+	public String toString(){
+		return
+				"Todo{" +
+						"id = '" + id + '\'' +
+						",completed = '" + completed + '\'' +
+						",title = '" + title + '\'' +
+						",userId = '" + userId + '\'' +
+						"}";
 	}
 }
